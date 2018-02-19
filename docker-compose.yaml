@@ -1,0 +1,11 @@
+version: "2"
+services:
+    panel:
+        image: node:9.4.0-alpine
+        volumes:
+            - $PANEL_PATH:/panel
+        working_dir:
+            "/panel"
+        ports:
+          - $PANEL_HOST_PORT:8080
+        command: npm run docker
